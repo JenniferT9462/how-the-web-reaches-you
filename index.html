@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How a Page Reaches You</title>
+
+</head>
+<body>
+  <h1>How a web page reaches you</h1>
+
+  <div class="stage">
+    <div class="machine">
+      <div class="emoji">💻</div>
+      <div class="label">Your browser</div>
+      <div class="sub">Chrome, Safari, Edge...</div>
+      <div class="built" id="built">
+        <div class="page-title" id="b-html">Sunday Book Club</div>
+        <div id="b-text">One book a month, good snacks and no pressure.</div>
+        <button id="b-js" type="button">Say hi</button>
+      </div>
+    </div>
+
+    <div class="middle">
+      <div class="wire"></div>
+      <div class="tag">the internet</div>
+      <div class="request" id="request">Please send me<br>your page!</div>
+      <div class="files" id="files">
+        <span class="file html">index.html</span>
+        <span class="file css">style.css</span>
+        <span class="file js">script.js</span>
+      </div>
+    </div>
+
+    <div class="machine">
+      <div class="emoji">🗄️</div>
+      <div class="label">A server</div>
+      <div class="sub" id="server-sub">A computer somewhere else</div>
+      <div class="server-files" id="server-files">
+        <span class="file html">index.html</span>
+        <span class="file css">style.css</span>
+        <span class="file js">script.js</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="caption" id="caption"></p>
+
+  <div class="controls">
+    <button id="back" type="button">← Back</button>
+    <span class="count" id="count"></span>
+    <button id="next" type="button">Next →</button>
+  </div>
+
+ 
+</body>
+</html>
