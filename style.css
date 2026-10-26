@@ -1,0 +1,244 @@
+   :root {
+      --bg: #fffcf9;
+      --ink: #1e293b;
+      --muted: #64748b;
+      --blue: #4e89bd;
+      --red: #e06c75;
+      --green: #3f8f5a;
+      --gold: #d79b2b;
+      --line: #e2dcd3;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: Inter, system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    h1 {
+      margin: 24px 24px 0;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+
+    .stage {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr 1fr;
+      align-items: center;
+      gap: 16px;
+      max-width: 1100px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    .machine {
+      border: 3px solid var(--ink);
+      border-radius: 16px;
+      background: white;
+      padding: 16px;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .machine .label {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .machine .sub {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .emoji {
+      font-size: 3rem;
+    }
+
+    /* The page the browser builds */
+    .built {
+      width: 100%;
+      flex: 1;
+      border: 2px dashed var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    .built > * {
+      opacity: 0;
+      transition: opacity 0.6s;
+    }
+
+    .built .show {
+      opacity: 1;
+    }
+
+    .built .page-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .built.styled .page-title {
+      color: var(--blue);
+      font-family: Georgia, serif;
+    }
+
+    .built.styled {
+      background: #eef5fb;
+      border-style: solid;
+      border-color: var(--blue);
+    }
+
+    .built button {
+      font: inherit;
+      margin-top: 8px;
+      padding: 4px 10px;
+      border: none;
+      border-radius: 6px;
+      background: var(--gold);
+      cursor: pointer;
+    }
+
+    /* Middle: the internet */
+    .middle {
+      position: relative;
+      height: 280px;
+    }
+
+    .wire {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      border-top: 3px dotted var(--muted);
+    }
+
+    .middle .tag {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(50% + 8px);
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .request {
+      position: absolute;
+      top: 12%;
+      left: 0;
+      max-width: 90%;
+      padding: 8px 12px;
+      border-radius: 10px;
+      background: var(--blue);
+      color: white;
+      font-weight: 600;
+      opacity: 0;
+      transition: left 1.2s ease-in-out, opacity 0.4s;
+    }
+
+    .request.go {
+      opacity: 1;
+      left: 10%;
+    }
+
+    .files {
+      position: absolute;
+      bottom: 6%;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      opacity: 0;
+      transition: right 1.4s ease-in-out, opacity 0.4s;
+    }
+
+    .files.go {
+      opacity: 1;
+      right: 55%;
+    }
+
+    .file {
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-family: Consolas, monospace;
+      font-weight: 700;
+      color: white;
+    }
+
+    .html { background: var(--red); }
+    .css { background: var(--blue); }
+    .js { background: var(--gold); color: var(--ink); }
+
+    .server-files {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      opacity: 0;
+      transition: opacity 0.6s;
+    }
+
+    .server-files.show {
+      opacity: 1;
+    }
+
+    /* Caption + controls */
+    .caption {
+      max-width: 900px;
+      margin: 0 auto 8px;
+      padding: 0 24px;
+      min-height: 4.5em;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+      padding: 0 24px 24px;
+    }
+
+    .controls button {
+      padding: 10px 24px;
+      font: inherit;
+      font-weight: 700;
+      border: 2px solid var(--ink);
+      border-radius: 999px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .controls #next {
+      background: var(--ink);
+      color: white;
+    }
+
+    .count {
+      color: var(--muted);
+    }
+
+    @media (max-width: 700px) {
+      .stage {
+        grid-template-columns: 1fr;
+      }
+
+      .middle {
+        height: 160px;
+      }
+    }
